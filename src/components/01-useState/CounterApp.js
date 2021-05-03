@@ -18,7 +18,7 @@ export default function CounterApp(num){
         //y abajo indicamos solo el que queremos modificar
         ...state,
         count1: count1+1 
-      })}>sumar</button>
+      })}>sum</button>
     </>
   );
 }
