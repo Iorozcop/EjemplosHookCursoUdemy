@@ -14,6 +14,8 @@ export default function CounterApp(num){
       <div>Count1: {count1}</div>
       <div>Count3: {count3}</div>
       <button onClick={()=>setState({
+        //con el operador spread nos traemos todos los state
+        //y abajo indicamos solo el que queremos modificar
         ...state,
         count1: count1+1 
       })}>sumar</button>
