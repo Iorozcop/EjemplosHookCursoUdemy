@@ -1,44 +1,48 @@
-import React, {useState} from 'react';
+import React from 'react';
+import useForm from '../../hooks/useForm'
 
 const FormWithCustomHook =() =>{
 
-const [stateForm,setStateForm] = useState({
+const [formValues,setFormValues] = useForm({
   name:'',
-  email:''
+  email:'',
+  pass:''
 });
 
 //destructuramos estas propiedades para poder acceder a ellas más fácilmente
-const {name,email} = stateForm;
-
-//destructuramos el evento y cogemos solo el target
-const handleInputChange =({ target })=>{
-  setStateForm({
-    ...stateForm,
-    //key: value. Aquí le decimos que al name que venga le de su correspondiente value
-    [target.name]: target.value
-  });
-}
-
+const {name,email,pass} = formValues;
+console.log(formValues);
 return(
   <div>
     <form className="form">
       <div className="formElements">
-        <label>name: </label>
+        <label htmlForm="username-input">name: </label>
         <input 
+          id="username-input"
           type="text" 
           name="name" 
           value= {name} 
-          onChange={handleInputChange}/>
+          onChange={setFormValues}/>
       </div>
       <div className="formElements">
-        <label>email: </label>
+        <label htmlForm="email-input">email: </label>
         <input 
+          id="email-input"
           type="text" 
           name="email" 
           value={email} 
-          onChange={handleInputChange}/>
+          onChange={setFormValues}/>
       </div>
-      <button className="formButton">Send</button>
+      <div className="formElements">
+        <label htmlForm="pass-input">pass: </label>
+        <input 
+          id="pass-input"
+          type="text" 
+          name="pass" 
+          value={pass} 
+          onChange={setFormValues}/>
+      </div>
+      <p>Bienvenid@ {name}</p>
     </form>
   </div>
 );
