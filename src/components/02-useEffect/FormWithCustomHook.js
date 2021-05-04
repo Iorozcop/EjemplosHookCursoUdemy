@@ -1,6 +1,6 @@
-import React, {useState,useEffect} from 'react';
+import React, {useState} from 'react';
 
-const SimpleForm =() =>{
+const FormWithCustomHook =() =>{
 
 const [stateForm,setStateForm] = useState({
   name:'',
@@ -9,20 +9,6 @@ const [stateForm,setStateForm] = useState({
 
 //destructuramos estas propiedades para poder acceder a ellas más fácilmente
 const {name,email} = stateForm;
-
-useEffect (()=>{
-  console.log('hello');
-},[]);
-
-//aparecerá siempre que haya algún cambio en el formulario
-useEffect (()=>{
-  console.log('stateForm ha cambiado');
-},[stateForm]);
-
-//si solo queremos que haga algo al cambiar el email
-useEffect (()=>{
-  console.log('Email ha cambiado');
-},[email]);
 
 //destructuramos el evento y cogemos solo el target
 const handleInputChange =({ target })=>{
@@ -57,4 +43,4 @@ return(
   </div>
 );
 }
-export default SimpleForm;
+export default FormWithCustomHook;

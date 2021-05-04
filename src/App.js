@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import CounterApp from './components/01-useState/CounterApp'
 import CounterWithCustomHook from './components/01-useState/CounterWithCustomHook'
 import SimpleForm from './components/02-useEffect/SimpleForm'
-
+import FormWithCustomHook from './components/02-useEffect/FormWithCustomHook'
 import "./style.css";
 
 export default function App() {
@@ -25,7 +25,14 @@ export default function App() {
       </div>
       <h1>useEffect</h1>
       <hr />
+      <p>Componente simpleForm:</p>
       <div><SimpleForm/></div>
+      <div>
+        <p>Componente simpleForm con customHook:</p>
+        <div>
+          <FormWithCustomHook/>
+        </div>
+      </div>
     </>
   );
 }
